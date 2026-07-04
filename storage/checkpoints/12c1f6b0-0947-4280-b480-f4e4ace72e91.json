@@ -1,0 +1,26 @@
+{
+  "checkpoint_id": "12c1f6b0-0947-4280-b480-f4e4ace72e91",
+  "run_id": "efbc1472-ef95-4b82-89cf-cf710481b565",
+  "workflow_type": "Structured data preview",
+  "data_source": "Synthetic structured database",
+  "accountability_owner": "Tester",
+  "current_step": "intake_complete",
+  "completed_steps": [
+    "intake_complete"
+  ],
+  "failed_steps": [],
+  "agent_context": {
+    "run_id": "efbc1472-ef95-4b82-89cf-cf710481b565",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "report_path": null,
+    "analytics_verified": null
+  },
+  "output_refs": {
+    "report_path": null,
+    "last_skill_id": "intake_summary",
+    "agent_id": "intake_agent"
+  },
+  "created_at": "2026-07-04T01:17:25.221942+00:00",
+  "status": "created"
+}

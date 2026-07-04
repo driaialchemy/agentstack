@@ -1,0 +1,18 @@
+{
+  "run_id": "1403bf5d-36d9-4f39-aaec-f92bc8f250b4",
+  "payload": {
+    "run_id": "1403bf5d-36d9-4f39-aaec-f92bc8f250b4",
+    "accountability_owner": "Tester",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "structured": true,
+    "status": "success",
+    "step": "intake_complete",
+    "agent_id": "intake_agent",
+    "skill_id": "intake_summary",
+    "output_summary": "Intake accepted for 'Structured data preview' using 'Synthetic structured database' (synthetic demo data only).",
+    "verified": null,
+    "verification_required": false
+  },
+  "updated_at": "2026-07-04T01:11:26.977369+00:00"
+}

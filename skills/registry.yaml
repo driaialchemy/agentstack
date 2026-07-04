@@ -1,0 +1,644 @@
+# agentstack skill registry — Phase 2 demo skills
+# Each skill defines what it may do and under which conditions it may run.
+
+skills:
+  - skill_id: structured_data_summary
+    display_name: Structured Data Summary
+    description: >
+      Load synthetic structured records and produce a summary for demo workflows.
+    allowed_data_sources:
+      - Synthetic structured database
+    allowed_workflow_types:
+      - Structured data preview
+    risk_level: low
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+
+  - skill_id: document_review_summary
+    display_name: Document Review Summary
+    description: >
+      Load synthetic documents and produce a review summary for demo workflows.
+    allowed_data_sources:
+      - Synthetic document database
+    allowed_workflow_types:
+      - Document review preview
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+
+  - skill_id: report_writer
+    display_name: Report Writer
+    description: >
+      Write a demo report artifact (JSON) from workflow output.
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+    risk_level: low
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+
+  - skill_id: approval_required_demo
+    display_name: Approval Required Demo
+    description: >
+      Intentional demo skill that requires human approval (blocked in Phase 2).
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+    risk_level: high
+    requires_approval: true
+    max_records_or_documents: 100
+    enabled: true
+
+  - skill_id: disabled_demo_skill
+    display_name: Disabled Demo Skill
+    description: >
+      Intentional demo skill that is registered but disabled.
+    allowed_data_sources:
+      - Synthetic structured database
+    allowed_workflow_types:
+      - Structured data preview
+    risk_level: low
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: false
+
+  - skill_id: intake_summary
+    display_name: Intake Summary
+    description: >
+      Validate workflow and data source pairing and prepare an intake summary.
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: low
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+
+  - skill_id: output_verification
+    display_name: Output Verification
+    description: >
+      Verify analysis output, report path, and governance checks passed.
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: low
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+
+  - skill_id: governed_workflow_summary
+    display_name: Governed Workflow Summary
+    description: >
+      Produce a plain-English governed workflow summary from agent context.
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+    risk_level: low
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+
+  - skill_id: run_eda
+    display_name: Run EDA
+    description: Exploratory data analysis on synthetic structured data.
+    version: "1.0.0"
+    allowed_agents:
+      - analysis_agent
+    allowed_data_sources:
+      - Synthetic structured database
+    allowed_workflow_types:
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    input_requirements: Synthetic structured records and monthly time series
+    output_expectations: Structured EDA summary with interpretation
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: run_regression
+    display_name: Run Regression
+    description: Simple linear regression on synthetic monthly revenue.
+    version: "1.0.0"
+    allowed_agents:
+      - analysis_agent
+    allowed_data_sources:
+      - Synthetic structured database
+    allowed_workflow_types:
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    input_requirements: Monthly synthetic time series
+    output_expectations: Coefficients, R-squared, interpretation, limitations
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: run_fourier_forecast
+    display_name: Run Fourier Forecast
+    description: Fourier-style seasonality projection demo on synthetic data.
+    version: "1.0.0"
+    allowed_agents:
+      - analysis_agent
+    allowed_data_sources:
+      - Synthetic structured database
+    allowed_workflow_types:
+      - Structured data analytics
+    risk_level: high
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    input_requirements: Monthly synthetic time series with minimum four periods
+    output_expectations: Projected values with explicit limitation note
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: generate_chart
+    display_name: Generate Chart
+    description: Generate a PNG revenue chart from synthetic analytics output.
+    version: "1.0.0"
+    allowed_agents:
+      - analysis_agent
+    allowed_data_sources:
+      - Synthetic structured database
+    allowed_workflow_types:
+      - Structured data analytics
+    risk_level: low
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    input_requirements: EDA and forecast outputs in agent context
+    output_expectations: PNG chart artifact path
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: generate_analytics_report
+    display_name: Generate Analytics Report
+    description: Build Markdown, HTML, and JSON analytics report artifacts.
+    version: "1.0.0"
+    allowed_agents:
+      - report_agent
+    allowed_data_sources:
+      - Synthetic structured database
+    allowed_workflow_types:
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    input_requirements: Completed analytics skill outputs in agent context
+    output_expectations: Report artifacts with findings, governance notes, limitations
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: verify_analytics_report
+    display_name: Verify Analytics Report
+    description: Verify analytics report completeness without modifying report content.
+    version: "1.0.0"
+    allowed_agents:
+      - verification_agent
+    allowed_data_sources:
+      - Synthetic structured database
+    allowed_workflow_types:
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    input_requirements: Generated analytics report in agent context
+    output_expectations: Verification summary with pass or fail reason
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: write_working_memory
+    display_name: Write Working Memory
+    description: Persist validated current-step context to working memory.
+    version: "1.0.0"
+    allowed_agents:
+      - intake_agent
+      - recovery_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    input_requirements: Validated structured memory_payload in agent context
+    output_expectations: Working memory record or quarantine routing
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: write_session_memory
+    display_name: Write Session Memory
+    description: Persist validated session/run state after successful workflow steps.
+    version: "1.0.0"
+    allowed_agents:
+      - report_agent
+      - recovery_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    input_requirements: Validated session_state in agent context
+    output_expectations: Session memory record or quarantine routing
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: quarantine_output
+    display_name: Quarantine Output
+    description: Route suspect or invalid output to quarantine memory.
+    version: "1.0.0"
+    allowed_agents:
+      - verification_agent
+      - recovery_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    input_requirements: quarantine_payload and reason in agent context
+    output_expectations: Quarantine entry reference
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: create_checkpoint
+    display_name: Create Checkpoint
+    description: Create a governed workflow checkpoint after a successful major step.
+    version: "1.0.0"
+    allowed_agents:
+      - recovery_agent
+      - intake_agent
+      - analysis_agent
+      - report_agent
+      - verification_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    input_requirements: checkpoint metadata in agent context
+    output_expectations: checkpoint record with status created
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: resume_from_checkpoint
+    display_name: Resume From Checkpoint
+    description: Resume workflow state from a prior good checkpoint.
+    version: "1.0.0"
+    allowed_agents:
+      - recovery_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: high
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    input_requirements: checkpoint_id in agent context
+    output_expectations: resumed agent context and step state
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: rollback_to_checkpoint
+    display_name: Rollback To Checkpoint
+    description: Roll back workflow state to a previous checkpoint.
+    version: "1.0.0"
+    allowed_agents:
+      - recovery_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: high
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    input_requirements: checkpoint_id in agent context
+    output_expectations: rolled back agent context and checkpoint status
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: write_dead_letter
+    display_name: Write Dead Letter
+    description: Record an unrecoverable failure in the dead-letter queue.
+    version: "1.0.0"
+    allowed_agents:
+      - recovery_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    input_requirements: dead_letter metadata in agent context
+    output_expectations: dead-letter queue entry
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: evaluate_cost
+    display_name: Evaluate Cost
+    description: Evaluate synthetic estimated cost and budget status for a skill or run.
+    version: "1.0.0"
+    allowed_agents:
+      - governance_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    estimated_cost: 1.0
+    cost_category: governance
+    cost_budget_impact: low
+    input_requirements: run_id and optional cost_skill_id in agent context
+    output_expectations: CostGate-compatible status and summary
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: evaluate_trust
+    display_name: Evaluate Trust
+    description: Deterministic trust evaluation for agents, skills, sources, and reports.
+    version: "1.0.0"
+    allowed_agents:
+      - governance_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    estimated_cost: 1.0
+    cost_category: governance
+    cost_budget_impact: low
+    input_requirements: agent/skill/source context fields
+    output_expectations: trust_level, reasons, recommended_action
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: run_security_check
+    display_name: Run Security Check
+    description: Pattern-based security checks for demo injection and sensitive data patterns.
+    version: "1.0.0"
+    allowed_agents:
+      - governance_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: high
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    estimated_cost: 2.0
+    cost_category: security
+    cost_budget_impact: medium
+    input_requirements: security_payload or security_content in agent context
+    output_expectations: passed, security_risk_level, detected_issue, redacted_output
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: create_incident_report
+    display_name: Create Incident Report
+    description: Generate a structured incident report for governance or security failures.
+    version: "1.0.0"
+    allowed_agents:
+      - governance_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    estimated_cost: 1.5
+    cost_category: governance
+    cost_budget_impact: low
+    input_requirements: incident_metadata in agent context
+    output_expectations: incident report with severity and recommended next action
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: request_human_approval
+    display_name: Request Human Approval
+    description: Create a pending human approval record for a high-risk governed action.
+    version: "1.0.0"
+    allowed_agents:
+      - governance_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: high
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    estimated_cost: 1.0
+    cost_category: governance
+    cost_budget_impact: low
+    input_requirements: approval_request metadata in agent context
+    output_expectations: pending approval record
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: resolve_human_approval
+    display_name: Resolve Human Approval
+    description: Approve, reject, or override a pending human approval request.
+    version: "1.0.0"
+    allowed_agents:
+      - governance_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: high
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    estimated_cost: 1.0
+    cost_category: governance
+    cost_budget_impact: low
+    input_requirements: approval_resolution with approval_id and status
+    output_expectations: updated approval record
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: generate_policy_coverage_report
+    display_name: Generate Policy Coverage Report
+    description: Build policy coverage evidence for a workflow run.
+    version: "1.0.0"
+    allowed_agents:
+      - governance_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    estimated_cost: 1.0
+    cost_category: evidence
+    cost_budget_impact: low
+    input_requirements: run_context in agent context
+    output_expectations: PolicyCoverageReport structure
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: generate_skill_coverage_report
+    display_name: Generate Skill Coverage Report
+    description: Build skill coverage evidence for a workflow run.
+    version: "1.0.0"
+    allowed_agents:
+      - governance_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    estimated_cost: 1.0
+    cost_category: evidence
+    cost_budget_impact: low
+    input_requirements: run_context in agent context
+    output_expectations: SkillCoverageReport structure
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: generate_audit_evidence_report
+    display_name: Generate Audit Evidence Report
+    description: Build audit evidence summary for a workflow run.
+    version: "1.0.0"
+    allowed_agents:
+      - governance_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    estimated_cost: 1.0
+    cost_category: evidence
+    cost_budget_impact: low
+    input_requirements: run_context and run_id in agent context
+    output_expectations: AuditEvidenceReport structure
+    audit_requirement: required
+    gate_expectations: pre and post execution gates
+
+  - skill_id: generate_governance_run_summary
+    display_name: Generate Governance Run Summary
+    description: Build final governance run summary and export Markdown/JSON evidence bundle.
+    version: "1.0.0"
+    allowed_agents:
+      - governance_agent
+    allowed_data_sources:
+      - Synthetic structured database
+      - Synthetic document database
+    allowed_workflow_types:
+      - Structured data preview
+      - Document review preview
+      - Structured data analytics
+    risk_level: medium
+    requires_approval: false
+    max_records_or_documents: 100
+    enabled: true
+    estimated_cost: 2.0
+    cost_category: evidence
+    cost_budget_impact: medium
+    input_requirements: complete run_context with governance summaries
+    output_expectations: GovernanceRunSummary with final verdict and export paths
+    audit_requirement: required
+    gate_expectations: pre and post execution gates

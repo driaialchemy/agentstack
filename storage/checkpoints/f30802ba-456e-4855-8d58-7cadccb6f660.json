@@ -1,0 +1,30 @@
+{
+  "checkpoint_id": "f30802ba-456e-4855-8d58-7cadccb6f660",
+  "run_id": "5a61a67c-12be-4394-971b-69f83657301a",
+  "workflow_type": "Structured data analytics",
+  "data_source": "Synthetic structured database",
+  "accountability_owner": "Tester",
+  "current_step": "analysis_complete",
+  "completed_steps": [
+    "intake_complete",
+    "analysis_complete",
+    "analysis_complete",
+    "forecast_complete",
+    "analysis_complete"
+  ],
+  "failed_steps": [],
+  "agent_context": {
+    "run_id": "5a61a67c-12be-4394-971b-69f83657301a",
+    "workflow_type": "Structured data analytics",
+    "data_source": "Synthetic structured database",
+    "report_path": null,
+    "analytics_verified": null
+  },
+  "output_refs": {
+    "report_path": null,
+    "last_skill_id": "generate_chart",
+    "agent_id": "analysis_agent"
+  },
+  "created_at": "2026-07-04T01:17:36.084900+00:00",
+  "status": "created"
+}

@@ -18,6 +18,7 @@ DATA_SOURCES = [
 WORKFLOW_TYPES = [
     "Structured data preview",
     "Document review preview",
+    "Structured data analytics",
 ]
 
 REQUIRED_CHARTER_FIELDS = [

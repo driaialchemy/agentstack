@@ -1,0 +1,18 @@
+{
+  "run_id": "6111c147-eb60-496e-ad8b-b8f014a2f577",
+  "payload": {
+    "run_id": "6111c147-eb60-496e-ad8b-b8f014a2f577",
+    "accountability_owner": "Tester",
+    "workflow_type": "Structured data analytics",
+    "data_source": "Synthetic structured database",
+    "structured": true,
+    "status": "success",
+    "step": "forecast_complete",
+    "agent_id": "analysis_agent",
+    "skill_id": "run_fourier_forecast",
+    "output_summary": "AnalysisAgent step completed.",
+    "verified": null,
+    "verification_required": false
+  },
+  "updated_at": "2026-07-04T01:15:34.979886+00:00"
+}

@@ -1,0 +1,18 @@
+{
+  "run_id": "91a96a21-41fb-45f0-9a41-00a6d5a278bd",
+  "payload": {
+    "run_id": "91a96a21-41fb-45f0-9a41-00a6d5a278bd",
+    "accountability_owner": "Tester",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "structured": true,
+    "status": "success",
+    "step": "report_generated",
+    "agent_id": "report_agent",
+    "skill_id": "governed_workflow_summary",
+    "output_summary": "Accountability owner: Tester. Workflow type: Structured data preview. Data source: Synthetic structured database (synthetic demo data only). Intake: Intake accepted for 'Structured data preview' using 'Synthetic structured database' (synthetic demo data only). Analysis: governed skill execution completed on synthetic data. Verification: Analysis output verified without modifying source data. This is a governed demonstration workflow. It uses synthetic data and does not represent real client outcomes.",
+    "verified": null,
+    "verification_required": false
+  },
+  "updated_at": "2026-07-04T01:09:41.671009+00:00"
+}

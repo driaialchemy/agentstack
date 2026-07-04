@@ -1,0 +1,136 @@
+{
+  "report_id": "ec31ee7d-5391-4a27-9dce-2f68c3dab705",
+  "workflow_type": "Structured data analytics",
+  "data_source": "Synthetic structured database",
+  "accountability_owner": "Tester",
+  "findings": {
+    "eda_interpretation": "The synthetic dataset contains 8 structured records and 12 monthly observations. Revenue shows an upward demo trend across the monthly series. This is synthetic data for governed demonstration only.",
+    "regression_interpretation": "Revenue increases by about $2,970 per period in this synthetic demo series (R-squared=0.96). This is a simple linear fit for demonstration, not a production forecasting model.",
+    "forecast_interpretation": "Projected 3 future periods using a simple seasonal/cyclical demo model. This Fourier-style projection demonstrates seasonality and cyclical patterns on synthetic data. It is not guaranteed prediction and must not be treated as a production forecast."
+  },
+  "eda": {
+    "row_count": 8,
+    "time_series_count": 12,
+    "columns": [
+      "category",
+      "id",
+      "quarter",
+      "region",
+      "revenue_usd",
+      "units_sold"
+    ],
+    "numeric_summary": {
+      "id": {
+        "min": 1.0,
+        "max": 8.0,
+        "mean": 4.5
+      },
+      "revenue_usd": {
+        "min": 87000.0,
+        "max": 142500.0,
+        "mean": 110275.0
+      },
+      "units_sold": {
+        "min": 190.0,
+        "max": 465.0,
+        "mean": 335.0
+      }
+    },
+    "missing_value_summary": {
+      "category": 0,
+      "id": 0,
+      "quarter": 0,
+      "region": 0,
+      "revenue_usd": 0,
+      "units_sold": 0
+    },
+    "trend_summary": {
+      "direction": "upward",
+      "first_period_revenue": 95000.0,
+      "last_period_revenue": 129000.0
+    },
+    "interpretation": "The synthetic dataset contains 8 structured records and 12 monthly observations. Revenue shows an upward demo trend across the monthly series. This is synthetic data for governed demonstration only.",
+    "skill_id": "run_eda"
+  },
+  "regression": {
+    "target_variable": "revenue_usd",
+    "feature_variables": [
+      "period"
+    ],
+    "coefficients": {
+      "intercept": 94234.85,
+      "period_slope": 2970.28
+    },
+    "r_squared": 0.9647,
+    "interpretation": "Revenue increases by about $2,970 per period in this synthetic demo series (R-squared=0.96). This is a simple linear fit for demonstration, not a production forecasting model.",
+    "limitations": [
+      "Synthetic demo data only.",
+      "Single-feature linear model; real drivers are not modeled.",
+      "Do not use for business decisions."
+    ],
+    "skill_id": "run_regression"
+  },
+  "forecast": {
+    "forecast_horizon": 3,
+    "seasonal_components": [
+      {
+        "component": "sin",
+        "period": 12.0,
+        "weight": 10200.0
+      },
+      {
+        "component": "cos",
+        "period": 6.0,
+        "weight": 5100.0
+      }
+    ],
+    "projected_values": [
+      {
+        "period": 13,
+        "projected_revenue_usd": 121191.67
+      },
+      {
+        "period": 14,
+        "projected_revenue_usd": 119825.13
+      },
+      {
+        "period": 15,
+        "projected_revenue_usd": 118641.67
+      }
+    ],
+    "interpretation": "Projected 3 future periods using a simple seasonal/cyclical demo model. This Fourier-style projection demonstrates seasonality and cyclical patterns on synthetic data. It is not guaranteed prediction and must not be treated as a production forecast.",
+    "limitation_note": "This Fourier-style projection demonstrates seasonality and cyclical patterns on synthetic data. It is not guaranteed prediction and must not be treated as a production forecast.",
+    "limitations": [
+      "This Fourier-style projection demonstrates seasonality and cyclical patterns on synthetic data. It is not guaranteed prediction and must not be treated as a production forecast.",
+      "Synthetic demo data only.",
+      "Model complexity is intentionally minimal for governance demonstration."
+    ],
+    "skill_id": "run_fourier_forecast"
+  },
+  "chart": {
+    "chart_type": "line",
+    "chart_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\storage\\charts\\ec31ee7d-5391-4a27-9dce-2f68c3dab705_revenue.png",
+    "title": "Synthetic Revenue Trend (Demo)",
+    "series": {
+      "historical_points": 12,
+      "forecast_points": 3
+    },
+    "skill_id": "generate_chart"
+  },
+  "governance_notes": [
+    "Workflow executed through governed skills, policy engine, and gate engine.",
+    "Accountability owner: Tester.",
+    "All agent steps logged to audit_log.jsonl."
+  ],
+  "limitations": [
+    "Synthetic demo data only.",
+    "Single-feature linear model; real drivers are not modeled.",
+    "Do not use for business decisions.",
+    "This Fourier-style projection demonstrates seasonality and cyclical patterns on synthetic data. It is not guaranteed prediction and must not be treated as a production forecast.",
+    "Model complexity is intentionally minimal for governance demonstration.",
+    "Synthetic structured data only.",
+    "Governed demo workflow; not client-ready analysis."
+  ],
+  "complete": true,
+  "synthetic_data_notice": true
+}

@@ -9,6 +9,40 @@ from data_sources.synthetic_documents import get_documents, summarize_documents
 from governance.audit_logger import log_event
 
 
+def build_structured_output(*, workflow_type: str, data_source: str) -> dict[str, Any]:
+    """Build structured data preview output (Phase 1 logic, no audit)."""
+    if data_source != "Synthetic structured database":
+        raise ValueError("Structured data preview requires the synthetic structured database.")
+    if workflow_type != "Structured data preview":
+        raise ValueError("Invalid workflow type for structured data preview.")
+
+    records = get_structured_records()
+    summary = summarize_structured_data()
+    return {
+        "workflow_type": workflow_type,
+        "data_source": data_source,
+        "summary": summary,
+        "records": records,
+    }
+
+
+def build_document_output(*, workflow_type: str, data_source: str) -> dict[str, Any]:
+    """Build document review preview output (Phase 1 logic, no audit)."""
+    if data_source != "Synthetic document database":
+        raise ValueError("Document review preview requires the synthetic document database.")
+    if workflow_type != "Document review preview":
+        raise ValueError("Invalid workflow type for document review preview.")
+
+    documents = get_documents()
+    summary = summarize_documents()
+    return {
+        "workflow_type": workflow_type,
+        "data_source": data_source,
+        "summary": summary,
+        "documents": documents,
+    }
+
+
 def run_demo_workflow(
     *,
     run_id: str,
@@ -40,41 +74,25 @@ def run_demo_workflow(
 
     try:
         if workflow_type == "Structured data preview":
-            if data_source != "Synthetic structured database":
-                raise ValueError(
-                    "Structured data preview requires the synthetic structured database."
-                )
-            records = get_structured_records()
-            summary = summarize_structured_data()
+            output = build_structured_output(
+                workflow_type=workflow_type,
+                data_source=data_source,
+            )
             _log(
                 "load_structured_data",
                 "success",
-                f"Loaded {len(records)} synthetic structured records.",
+                f"Loaded {len(output['records'])} synthetic structured records.",
             )
-            output = {
-                "workflow_type": workflow_type,
-                "data_source": data_source,
-                "summary": summary,
-                "records": records,
-            }
         elif workflow_type == "Document review preview":
-            if data_source != "Synthetic document database":
-                raise ValueError(
-                    "Document review preview requires the synthetic document database."
-                )
-            documents = get_documents()
-            summary = summarize_documents()
+            output = build_document_output(
+                workflow_type=workflow_type,
+                data_source=data_source,
+            )
             _log(
                 "load_documents",
                 "success",
-                f"Loaded {len(documents)} synthetic documents.",
+                f"Loaded {len(output['documents'])} synthetic documents.",
             )
-            output = {
-                "workflow_type": workflow_type,
-                "data_source": data_source,
-                "summary": summary,
-                "documents": documents,
-            }
         else:
             raise ValueError(f"Unsupported workflow type: {workflow_type}")
 

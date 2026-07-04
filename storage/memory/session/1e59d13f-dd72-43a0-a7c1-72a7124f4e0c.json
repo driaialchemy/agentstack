@@ -1,0 +1,24 @@
+{
+  "run_id": "1e59d13f-dd72-43a0-a7c1-72a7124f4e0c",
+  "state": {
+    "run_id": "1e59d13f-dd72-43a0-a7c1-72a7124f4e0c",
+    "workflow_type": "Document review preview",
+    "data_source": "Synthetic document database",
+    "status": "success",
+    "verified": true,
+    "completed_steps": [
+      "intake_complete",
+      "analysis_complete",
+      "verification_passed",
+      "report_generated"
+    ],
+    "checkpoints": [
+      "8fec211a-e979-47c1-95ac-18d7c934651a",
+      "bf8bca8b-6194-472a-9555-f8c65ccd0e30",
+      "4a09d1d4-c199-4e30-9558-91a8f6b595c6",
+      "beca513c-9b80-407e-974f-1eb3c3ad3833"
+    ],
+    "structured": true
+  },
+  "updated_at": "2026-07-04T01:14:06.180672+00:00"
+}

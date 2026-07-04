@@ -1,93 +1,109 @@
 # agentstack
 
-**Governed multi-agent intelligence stack** — Phase 1 foundation for the `agentstack` repository.
+**Governed multi-agent intelligence stack** — Phases 1–6 complete on synthetic data only.
 
-Phase 1 delivers a working Streamlit shell with synthetic data sources, a workflow charter tab, a basic demonstration workflow runner, and a JSONL audit log. See `AGENT_CHARTER.md` for the full operating model.
+See `AGENT_CHARTER.md` for the operating model. See `ARCHITECTURE.md` and `DEMO_SCRIPT.md` for structure and live demo steps.
 
 **Governance rule:** No charter, no run.
 
-## Phase 1 capabilities
+## Project purpose
 
-- Streamlit app with four tabs: Workflow Charter, Run Workflow, Output, Audit Log
-- Synthetic structured database (in-memory demo records)
-- Synthetic document database (in-memory demo documents)
-- Data source dropdown (synthetic sources only)
-- Workflow charter checklist bound to `AGENT_CHARTER.md`
-- Basic demo workflows:
-  - Structured data preview
-  - Document review preview
-- JSONL audit log at `storage/audit_log.jsonl`
-- Report artifacts saved to `reports/` as JSON
+Demonstrate a single integrated stack where agents, skills, policy, gates, audit, memory/recovery, and evidence reporting work together. Every workflow must bind to a completed charter and accountability owner.
 
-## Prerequisites
+**Portfolio proof (combined phases):**
 
-- Python 3.10 or newer
-- pip
+> I built a governed multi-agent intelligence stack that can produce evidence showing which agents acted, which skills were authorized, which gates passed or failed, what approvals were required, what risks were controlled, what failures occurred, and why the final output can or cannot be trusted.
 
-## Launch the app
+## Current status
 
-From the repository root:
+| Phase | Capability |
+|-------|------------|
+| 1 | Streamlit shell, charter, synthetic data, audit log |
+| 2 | Skill registry, policy engine, gate engine, skill executor |
+| 3 | Governed agents, linear orchestrator |
+| 4 | Analytics & reporting on synthetic structured data |
+| 5 | Memory, checkpoints, quarantine, recovery, dead-letter |
+| 6 | Cost/trust/security governance, approvals, incidents, evidence exports |
 
-```bash
+Stabilization pass: consistent blocked-state envelopes, audit field normalization, demo UI clarity, regression tests in `tests/test_stabilization_hardening.py`.
+
+## Install
+
+```powershell
 cd C:\Users\msell\OneDrive\aialchemyrepos\agentstack
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+```
+
+## Launch Streamlit
+
+```powershell
 streamlit run app.py
 ```
 
-On macOS/Linux, activate with `source .venv/bin/activate`.
-
-The app opens in your browser (default: http://localhost:8501).
-
-## Quick start
-
-1. Open the **Workflow Charter** tab and complete the checklist (including accountability owner).
-2. Open **Run Workflow**, select a data source and matching workflow type, then click **Run workflow**.
-3. View results in **Output** and audit entries in **Audit Log**.
-
-| Workflow type | Required data source |
-|---|---|
-| Structured data preview | Synthetic structured database |
-| Document review preview | Synthetic document database |
+Default URL: http://localhost:8501
 
 ## Run tests
 
-```bash
-pip install -r requirements.txt
+```powershell
 python -m pytest tests/ -v
 ```
 
-Or run the smoke script directly:
+## Key governance concepts
 
-```bash
-python tests/test_phase1_smoke.py
-```
+- **Charter gate:** incomplete charter blocks orchestration and governance skills.
+- **Policy engine:** authorizes skills by registry, source, workflow, size, and approval state.
+- **Gate engine:** pre/post checks; Phase 6 adds cost, trust, security, and human-approval gates when context supplies evaluations.
+- **Skill executor:** sole execution path for skill and analytics logic.
+- **Audit logger:** JSONL at `storage/audit_log.jsonl` with normalized fields where applicable.
+- **Memory/recovery:** validate-before-write, checkpoints, quarantine, dead-letter.
+- **Evidence:** policy/skill/audit summaries and governance verdict exported to `storage/evidence/`.
 
-## Project layout (Phase 1)
+## Demo workflow (happy path)
+
+1. Complete **Workflow Charter** (including accountability owner).
+2. **Run Workflow** → `Structured data preview` + `Synthetic structured database`.
+3. Review **Output**, **Agents & Orchestration**, **Memory & Recovery**.
+4. Open **Advanced Governance & Evidence** for verdict and downloadable artifacts.
+5. Inspect **Audit / Evidence Viewer** for run events.
+
+For a guided walkthrough, use `DEMO_SCRIPT.md`.
+
+## Intentional failure demos
+
+| Tab | Examples |
+|-----|----------|
+| Skills Governance | unregistered skill, disabled skill, source/workflow mismatch, incomplete charter, excessive input, approval-required skill |
+| Agents & Orchestration | incomplete charter, missing owner, disabled agent, unauthorized skill, invalid source/workflow |
+| Memory & Recovery | invalid memory write, quarantine, checkpoint/resume/rollback, dead-letter |
+| Advanced Governance | cost limit, untrusted agent, security injection, approval required/rejected/overridden, incident report, blocked summary |
+
+Blocked paths return structured results with `failure_class` and `recommended_action` where appropriate.
+
+## Repository structure
 
 ```text
 agentstack/
   app.py
   AGENT_CHARTER.md
-  requirements.txt
-  data_sources/
-    synthetic_data.py
-    synthetic_documents.py
+  ARCHITECTURE.md
+  DEMO_SCRIPT.md
+  agents/
+  analytics/
+  evidence/
   governance/
-    audit_logger.py
-    workflow_charter.py
-    demo_workflow.py
+  memory/
+  orchestration/
+  skills/
   storage/
-    audit_log.jsonl
   reports/
   tests/
-    test_phase1_smoke.py
 ```
 
-## Out of scope (Phase 2+)
+## Out of scope
 
-Phase 1 intentionally excludes skill registry, policy engine, gate engine, multi-agent orchestration, forecasting, memory tiers, rollback, approval queues, and `contractriskreviewpipeline` integration.
+External APIs, real client data, production deployment, SSO, multi-tenant hosting, autonomous loops, dynamic routing, vector databases, RAG memory, full DLP, external compliance certification, Word/PDF/PPTX export, contract risk pipeline hardwiring.
 
 ## License
 

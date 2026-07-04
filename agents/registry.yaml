@@ -1,0 +1,162 @@
+# agentstack agent registry — Phase 3 governed agents
+
+# Agents may only perform work through allowed skills in the skill executor.
+
+
+
+agents:
+
+  - agent_id: intake_agent
+
+    agent_name: IntakeAgent
+
+    description: Validates workflow/data source pairing and prepares intake summary.
+
+    allowed_skills:
+
+      - intake_summary
+
+      - write_working_memory
+
+      - create_checkpoint
+
+    enabled: true
+
+
+
+  - agent_id: analysis_agent
+
+    agent_name: AnalysisAgent
+
+    description: Runs governed structured or document analysis skills.
+
+    allowed_skills:
+
+      - structured_data_summary
+
+      - document_review_summary
+
+      - run_eda
+
+      - run_regression
+
+      - run_fourier_forecast
+
+      - generate_chart
+
+      - create_checkpoint
+
+    enabled: true
+
+
+
+  - agent_id: verification_agent
+
+    agent_name: VerificationAgent
+
+    description: Verifies analysis output and governance checks without modifying data.
+
+    allowed_skills:
+
+      - output_verification
+
+      - verify_analytics_report
+
+      - quarantine_output
+
+      - create_checkpoint
+
+    enabled: true
+
+
+
+  - agent_id: report_agent
+
+    agent_name: ReportAgent
+
+    description: Produces a plain-English governed workflow summary.
+
+    allowed_skills:
+
+      - governed_workflow_summary
+
+      - generate_analytics_report
+
+      - write_session_memory
+
+      - create_checkpoint
+
+    enabled: true
+
+
+
+  - agent_id: recovery_agent
+
+    agent_name: RecoveryAgent
+
+    description: Governed memory, checkpoint, rollback, quarantine, and dead-letter operations.
+
+    allowed_skills:
+
+      - write_working_memory
+
+      - write_session_memory
+
+      - quarantine_output
+
+      - create_checkpoint
+
+      - resume_from_checkpoint
+
+      - rollback_to_checkpoint
+
+      - write_dead_letter
+
+    enabled: true
+
+
+
+  - agent_id: governance_agent
+
+    agent_name: GovernanceAgent
+
+    description: Advanced governance, trust, security, approval, incident, and evidence skills.
+
+    allowed_skills:
+
+      - evaluate_cost
+
+      - evaluate_trust
+
+      - run_security_check
+
+      - create_incident_report
+
+      - request_human_approval
+
+      - resolve_human_approval
+
+      - generate_policy_coverage_report
+
+      - generate_skill_coverage_report
+
+      - generate_audit_evidence_report
+
+      - generate_governance_run_summary
+
+    enabled: true
+
+
+
+  - agent_id: disabled_demo_agent
+
+    agent_name: DisabledDemoAgent
+
+    description: Intentional demo agent that is registered but disabled.
+
+    allowed_skills:
+
+      - intake_summary
+
+    enabled: false
+

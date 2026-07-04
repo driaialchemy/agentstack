@@ -1,0 +1,18 @@
+{
+  "run_id": "6546ad76-34a5-416d-a608-e5dc96c1bf2c",
+  "payload": {
+    "run_id": "6546ad76-34a5-416d-a608-e5dc96c1bf2c",
+    "accountability_owner": "Tester",
+    "workflow_type": "Structured data analytics",
+    "data_source": "Synthetic structured database",
+    "structured": true,
+    "status": "success",
+    "step": "verification_passed",
+    "agent_id": "verification_agent",
+    "skill_id": "verify_analytics_report",
+    "output_summary": "Analytics report verified successfully.",
+    "verified": true,
+    "verification_required": true
+  },
+  "updated_at": "2026-07-04T01:31:45.064381+00:00"
+}

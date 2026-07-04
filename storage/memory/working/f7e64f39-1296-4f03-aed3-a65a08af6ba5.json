@@ -1,0 +1,18 @@
+{
+  "run_id": "f7e64f39-1296-4f03-aed3-a65a08af6ba5",
+  "payload": {
+    "run_id": "f7e64f39-1296-4f03-aed3-a65a08af6ba5",
+    "accountability_owner": "Tester",
+    "workflow_type": "Document review preview",
+    "data_source": "Synthetic document database",
+    "structured": true,
+    "status": "success",
+    "step": "report_generated",
+    "agent_id": "report_agent",
+    "skill_id": "governed_workflow_summary",
+    "output_summary": "Accountability owner: Tester. Workflow type: Document review preview. Data source: Synthetic document database (synthetic demo data only). Intake: Intake accepted for 'Document review preview' using 'Synthetic document database' (synthetic demo data only). Analysis: governed skill execution completed on synthetic data. Verification: Analysis output verified without modifying source data. This is a governed demonstration workflow. It uses synthetic data and does not represent real client outcomes.",
+    "verified": null,
+    "verification_required": false
+  },
+  "updated_at": "2026-07-04T01:15:21.573646+00:00"
+}

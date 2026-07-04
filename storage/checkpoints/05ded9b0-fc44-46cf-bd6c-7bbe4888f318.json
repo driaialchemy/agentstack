@@ -1,0 +1,26 @@
+{
+  "checkpoint_id": "05ded9b0-fc44-46cf-bd6c-7bbe4888f318",
+  "run_id": "95ef26be-e8fb-4af4-ad00-43fe95b66eee",
+  "workflow_type": "Structured data analytics",
+  "data_source": "Synthetic structured database",
+  "accountability_owner": "Tester",
+  "current_step": "intake_complete",
+  "completed_steps": [
+    "intake_complete"
+  ],
+  "failed_steps": [],
+  "agent_context": {
+    "run_id": "95ef26be-e8fb-4af4-ad00-43fe95b66eee",
+    "workflow_type": "Structured data analytics",
+    "data_source": "Synthetic structured database",
+    "report_path": null,
+    "analytics_verified": null
+  },
+  "output_refs": {
+    "report_path": null,
+    "last_skill_id": "intake_summary",
+    "agent_id": "intake_agent"
+  },
+  "created_at": "2026-07-04T01:09:48.296359+00:00",
+  "status": "created"
+}

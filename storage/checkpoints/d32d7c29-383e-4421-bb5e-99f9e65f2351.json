@@ -1,0 +1,31 @@
+{
+  "checkpoint_id": "d32d7c29-383e-4421-bb5e-99f9e65f2351",
+  "run_id": "d6134c5f-8aca-4487-971d-175fe584157a",
+  "workflow_type": "Structured data analytics",
+  "data_source": "Synthetic structured database",
+  "accountability_owner": "Tester",
+  "current_step": "report_generated",
+  "completed_steps": [
+    "intake_complete",
+    "analysis_complete",
+    "analysis_complete",
+    "forecast_complete",
+    "analysis_complete",
+    "report_generated"
+  ],
+  "failed_steps": [],
+  "agent_context": {
+    "run_id": "d6134c5f-8aca-4487-971d-175fe584157a",
+    "workflow_type": "Structured data analytics",
+    "data_source": "Synthetic structured database",
+    "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\d6134c5f-8aca-4487-971d-175fe584157a_analytics.json",
+    "analytics_verified": null
+  },
+  "output_refs": {
+    "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\d6134c5f-8aca-4487-971d-175fe584157a_analytics.json",
+    "last_skill_id": "generate_analytics_report",
+    "agent_id": "report_agent"
+  },
+  "created_at": "2026-07-04T01:16:50.936033+00:00",
+  "status": "created"
+}

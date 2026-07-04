@@ -1,0 +1,27 @@
+{
+  "checkpoint_id": "c296ac6f-b333-42b3-9439-8cced5ddba06",
+  "run_id": "f7e64f39-1296-4f03-aed3-a65a08af6ba5",
+  "workflow_type": "Document review preview",
+  "data_source": "Synthetic document database",
+  "accountability_owner": "Tester",
+  "current_step": "analysis_complete",
+  "completed_steps": [
+    "intake_complete",
+    "analysis_complete"
+  ],
+  "failed_steps": [],
+  "agent_context": {
+    "run_id": "f7e64f39-1296-4f03-aed3-a65a08af6ba5",
+    "workflow_type": "Document review preview",
+    "data_source": "Synthetic document database",
+    "report_path": "C:\\Users\\msell\\AppData\\Local\\Temp\\tmp3puppajf\\reports\\f7e64f39-1296-4f03-aed3-a65a08af6ba5.json",
+    "analytics_verified": null
+  },
+  "output_refs": {
+    "report_path": "C:\\Users\\msell\\AppData\\Local\\Temp\\tmp3puppajf\\reports\\f7e64f39-1296-4f03-aed3-a65a08af6ba5.json",
+    "last_skill_id": "document_review_summary",
+    "agent_id": "analysis_agent"
+  },
+  "created_at": "2026-07-04T01:15:19.759358+00:00",
+  "status": "created"
+}
