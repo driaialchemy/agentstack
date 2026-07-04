@@ -1,0 +1,29 @@
+{
+  "checkpoint_id": "07beaab4-e4a0-4745-8fb0-34a00ec00652",
+  "run_id": "2a03c517-f96a-4350-9973-4cc62c78a9b6",
+  "workflow_type": "Structured data analytics",
+  "data_source": "Synthetic structured database",
+  "accountability_owner": "Tester",
+  "current_step": "forecast_complete",
+  "completed_steps": [
+    "intake_complete",
+    "analysis_complete",
+    "analysis_complete",
+    "forecast_complete"
+  ],
+  "failed_steps": [],
+  "agent_context": {
+    "run_id": "2a03c517-f96a-4350-9973-4cc62c78a9b6",
+    "workflow_type": "Structured data analytics",
+    "data_source": "Synthetic structured database",
+    "report_path": null,
+    "analytics_verified": null
+  },
+  "output_refs": {
+    "report_path": null,
+    "last_skill_id": "run_fourier_forecast",
+    "agent_id": "analysis_agent"
+  },
+  "created_at": "2026-07-04T01:48:55.108195+00:00",
+  "status": "created"
+}

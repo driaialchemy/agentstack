@@ -1,0 +1,71 @@
+{
+  "workflow_type": "Document review preview",
+  "data_source": "Synthetic document database",
+  "summary": {
+    "document_count": 4,
+    "doc_types": [
+      "assessment",
+      "compliance",
+      "contract",
+      "sow"
+    ],
+    "risk_counts": {
+      "medium": 2,
+      "high": 1,
+      "low": 1
+    },
+    "highlighted_documents": [
+      {
+        "doc_id": "DOC-001",
+        "title": "Master Services Agreement \u2014 Acme Corp",
+        "doc_type": "contract",
+        "risk_tier": "medium",
+        "summary": "Standard MSA with liability cap and 30-day termination notice.",
+        "excerpt": "Provider liability shall not exceed fees paid in the prior twelve months."
+      },
+      {
+        "doc_id": "DOC-002",
+        "title": "Data Processing Addendum \u2014 Beta Analytics",
+        "doc_type": "compliance",
+        "risk_tier": "high",
+        "summary": "DPA covering subprocessors, breach notification, and audit rights.",
+        "excerpt": "Controller may audit processing activities upon 30 days written notice."
+      }
+    ]
+  },
+  "documents": [
+    {
+      "doc_id": "DOC-001",
+      "title": "Master Services Agreement \u2014 Acme Corp",
+      "doc_type": "contract",
+      "risk_tier": "medium",
+      "summary": "Standard MSA with liability cap and 30-day termination notice.",
+      "excerpt": "Provider liability shall not exceed fees paid in the prior twelve months."
+    },
+    {
+      "doc_id": "DOC-002",
+      "title": "Data Processing Addendum \u2014 Beta Analytics",
+      "doc_type": "compliance",
+      "risk_tier": "high",
+      "summary": "DPA covering subprocessors, breach notification, and audit rights.",
+      "excerpt": "Controller may audit processing activities upon 30 days written notice."
+    },
+    {
+      "doc_id": "DOC-003",
+      "title": "Statement of Work \u2014 Cloud Migration",
+      "doc_type": "sow",
+      "risk_tier": "low",
+      "summary": "Fixed-scope migration with milestone payments and acceptance criteria.",
+      "excerpt": "Deliverables are accepted when validation tests pass in staging."
+    },
+    {
+      "doc_id": "DOC-004",
+      "title": "Vendor Security Questionnaire Response",
+      "doc_type": "assessment",
+      "risk_tier": "medium",
+      "summary": "Self-attested controls for encryption, access management, and logging.",
+      "excerpt": "Data at rest is encrypted using AES-256 across production systems."
+    }
+  ],
+  "skill_id": "document_review_summary"
+}

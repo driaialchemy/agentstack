@@ -1,0 +1,24 @@
+{
+  "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+  "state": {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "status": "success",
+    "verified": true,
+    "completed_steps": [
+      "intake_complete",
+      "analysis_complete",
+      "verification_passed",
+      "report_generated"
+    ],
+    "checkpoints": [
+      "164583d4-ae5b-4ca1-babe-80c84c948860",
+      "d1e7e8bc-beaf-4b98-bbab-a6cc3140255d",
+      "a053e2e7-1be1-4139-8f41-91ec8d262229",
+      "74a7d0a0-c8e2-4942-8725-4756cbb03927"
+    ],
+    "structured": true
+  },
+  "updated_at": "2026-07-04T01:55:55.212522+00:00"
+}

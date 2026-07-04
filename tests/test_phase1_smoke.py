@@ -17,6 +17,7 @@ from governance.audit_logger import generate_run_id, log_event, read_audit_event
 from governance.demo_workflow import run_demo_workflow
 from governance.workflow_charter import (
     CHARTER_RULE,
+    REQUIRED_CHARTER_FIELDS,
     load_charter_text,
     validate_charter,
 )
@@ -45,6 +46,71 @@ class Phase1SmokeTests(unittest.TestCase):
         incomplete, missing = validate_charter({"accountability_owner": ""})
         self.assertFalse(incomplete)
         self.assertTrue(missing)
+
+    def test_charter_required_field_names_are_stable(self) -> None:
+        self.assertEqual(
+            [field_name for field_name, _ in REQUIRED_CHARTER_FIELDS],
+            [
+                "business_problem_ack",
+                "desired_outcome_ack",
+                "accountability_owner",
+                "workflow_scope_ack",
+                "out_of_scope_ack",
+                "audit_enabled_ack",
+            ],
+        )
+
+    def test_accountability_owner_requires_non_empty_value(self) -> None:
+        complete, missing = validate_charter(
+            {
+                "business_problem_ack": True,
+                "desired_outcome_ack": True,
+                "accountability_owner": "   ",
+                "workflow_scope_ack": True,
+                "out_of_scope_ack": True,
+                "audit_enabled_ack": True,
+            }
+        )
+        self.assertFalse(complete)
+        self.assertIn("Accountability owner named", missing)
+
+    def test_charter_validation_passes_when_all_acknowledgments_present(self) -> None:
+        complete, missing = validate_charter(
+            {
+                "business_problem_ack": True,
+                "desired_outcome_ack": True,
+                "accountability_owner": "Demo Operator",
+                "workflow_scope_ack": True,
+                "out_of_scope_ack": True,
+                "audit_enabled_ack": True,
+            }
+        )
+        self.assertTrue(complete)
+        self.assertEqual(missing, [])
+
+    def test_charter_validation_reports_specific_missing_acknowledgments(self) -> None:
+        """Regression test: desired outcome, out-of-scope, and audit acks must be
+        read using validator field names (desired_outcome_ack, out_of_scope_ack,
+        audit_enabled_ack), or the UI will misreport them as missing."""
+        complete, missing = validate_charter(
+            {
+                "business_problem_ack": True,
+                "desired_outcome_ack": False,
+                "accountability_owner": "Demo Operator",
+                "workflow_scope_ack": True,
+                "out_of_scope_ack": False,
+                "audit_enabled_ack": False,
+            }
+        )
+        self.assertFalse(complete)
+        self.assertEqual(
+            missing,
+            [
+                "Desired outcome acknowledged",
+                "Out-of-scope activities excluded",
+                "Audit and observability enabled",
+            ],
+        )
 
     def test_synthetic_data_sources(self) -> None:
         records = get_structured_records()

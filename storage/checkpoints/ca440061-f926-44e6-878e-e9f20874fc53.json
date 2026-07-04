@@ -1,0 +1,26 @@
+{
+  "checkpoint_id": "ca440061-f926-44e6-878e-e9f20874fc53",
+  "run_id": "4c30f45c-c8c1-4ca7-bf32-22abd2538a28",
+  "workflow_type": "Structured data analytics",
+  "data_source": "Synthetic structured database",
+  "accountability_owner": "dr mike",
+  "current_step": "intake_complete",
+  "completed_steps": [
+    "intake_complete"
+  ],
+  "failed_steps": [],
+  "agent_context": {
+    "run_id": "4c30f45c-c8c1-4ca7-bf32-22abd2538a28",
+    "workflow_type": "Structured data analytics",
+    "data_source": "Synthetic structured database",
+    "report_path": null,
+    "analytics_verified": null
+  },
+  "output_refs": {
+    "report_path": null,
+    "last_skill_id": "intake_summary",
+    "agent_id": "intake_agent"
+  },
+  "created_at": "2026-07-04T01:56:51.258926+00:00",
+  "status": "created"
+}

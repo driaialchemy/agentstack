@@ -1,0 +1,29 @@
+{
+  "checkpoint_id": "ab3cc6e7-a1bc-4f29-9009-4ae056734e11",
+  "run_id": "4f7766d5-abde-4305-b911-e67f6737064a",
+  "workflow_type": "Document review preview",
+  "data_source": "Synthetic document database",
+  "accountability_owner": "Tester",
+  "current_step": "report_generated",
+  "completed_steps": [
+    "intake_complete",
+    "analysis_complete",
+    "verification_passed",
+    "report_generated"
+  ],
+  "failed_steps": [],
+  "agent_context": {
+    "run_id": "4f7766d5-abde-4305-b911-e67f6737064a",
+    "workflow_type": "Document review preview",
+    "data_source": "Synthetic document database",
+    "report_path": "C:\\Users\\msell\\AppData\\Local\\Temp\\tmp2s06_6ps\\reports\\4f7766d5-abde-4305-b911-e67f6737064a.json",
+    "analytics_verified": null
+  },
+  "output_refs": {
+    "report_path": "C:\\Users\\msell\\AppData\\Local\\Temp\\tmp2s06_6ps\\reports\\4f7766d5-abde-4305-b911-e67f6737064a.json",
+    "last_skill_id": "governed_workflow_summary",
+    "agent_id": "report_agent"
+  },
+  "created_at": "2026-07-04T01:40:52.118331+00:00",
+  "status": "created"
+}

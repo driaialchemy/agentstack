@@ -1,0 +1,27 @@
+{
+  "checkpoint_id": "201c7c61-4a51-473a-ad08-5a1e4f7f5b3e",
+  "run_id": "881741ee-5b6b-4d55-840b-c138ee9d24ac",
+  "workflow_type": "Document review preview",
+  "data_source": "Synthetic document database",
+  "accountability_owner": "dr mike",
+  "current_step": "analysis_complete",
+  "completed_steps": [
+    "intake_complete",
+    "analysis_complete"
+  ],
+  "failed_steps": [],
+  "agent_context": {
+    "run_id": "881741ee-5b6b-4d55-840b-c138ee9d24ac",
+    "workflow_type": "Document review preview",
+    "data_source": "Synthetic document database",
+    "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\881741ee-5b6b-4d55-840b-c138ee9d24ac.json",
+    "analytics_verified": null
+  },
+  "output_refs": {
+    "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\881741ee-5b6b-4d55-840b-c138ee9d24ac.json",
+    "last_skill_id": "document_review_summary",
+    "agent_id": "analysis_agent"
+  },
+  "created_at": "2026-07-04T02:01:45.753483+00:00",
+  "status": "created"
+}

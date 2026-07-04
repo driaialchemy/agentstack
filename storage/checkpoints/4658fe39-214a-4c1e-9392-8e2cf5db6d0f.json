@@ -1,0 +1,28 @@
+{
+  "checkpoint_id": "4658fe39-214a-4c1e-9392-8e2cf5db6d0f",
+  "run_id": "7c402639-fa07-4444-99c8-ee5e71e74167",
+  "workflow_type": "Structured data preview",
+  "data_source": "Synthetic structured database",
+  "accountability_owner": "Tester",
+  "current_step": "verification_passed",
+  "completed_steps": [
+    "intake_complete",
+    "analysis_complete",
+    "verification_passed"
+  ],
+  "failed_steps": [],
+  "agent_context": {
+    "run_id": "7c402639-fa07-4444-99c8-ee5e71e74167",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "report_path": "C:\\Users\\msell\\AppData\\Local\\Temp\\tmp21s6t0q8\\reports\\7c402639-fa07-4444-99c8-ee5e71e74167.json",
+    "analytics_verified": null
+  },
+  "output_refs": {
+    "report_path": "C:\\Users\\msell\\AppData\\Local\\Temp\\tmp21s6t0q8\\reports\\7c402639-fa07-4444-99c8-ee5e71e74167.json",
+    "last_skill_id": "output_verification",
+    "agent_id": "verification_agent"
+  },
+  "created_at": "2026-07-04T01:42:12.014539+00:00",
+  "status": "created"
+}

@@ -1,0 +1,30 @@
+{
+  "run_id": "2a03c517-f96a-4350-9973-4cc62c78a9b6",
+  "state": {
+    "run_id": "2a03c517-f96a-4350-9973-4cc62c78a9b6",
+    "workflow_type": "Structured data analytics",
+    "data_source": "Synthetic structured database",
+    "status": "success",
+    "verified": true,
+    "completed_steps": [
+      "intake_complete",
+      "analysis_complete",
+      "analysis_complete",
+      "forecast_complete",
+      "analysis_complete",
+      "report_generated",
+      "verification_passed"
+    ],
+    "checkpoints": [
+      "270350ed-f268-4710-a271-ffa66dea3d15",
+      "df964f43-dd7f-45aa-8f67-ae9b03df3052",
+      "e1e870b6-76cd-4731-bf8b-bd61addfd30c",
+      "07beaab4-e4a0-4745-8fb0-34a00ec00652",
+      "e3a1203a-5349-4d75-9fb7-5d28ecbe15a2",
+      "02e4bc0d-f518-4486-93b1-84668b27f461",
+      "5bdf6ddf-8ad3-4587-add7-a8ac41307664"
+    ],
+    "structured": true
+  },
+  "updated_at": "2026-07-04T01:48:57.838668+00:00"
+}

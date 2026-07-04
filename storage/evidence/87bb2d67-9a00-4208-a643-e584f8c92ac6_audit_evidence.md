@@ -1,0 +1,495 @@
+# Audit Evidence
+
+- **run_id**: 87bb2d67-9a00-4208-a643-e584f8c92ac6
+
+- **event_count**: 46
+
+## key_audit_entries
+```json
+[
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:57.743332+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'write_working_memory' post-execution gates passed.",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "write_working_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_working_memory:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:57.860246+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_executed",
+    "status": "success",
+    "summary": "Skill 'create_checkpoint' executed successfully.",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "create_checkpoint",
+    "skill_version": "1.0.0",
+    "task_id": "create_checkpoint:skill_executed",
+    "policy_decision": "allow",
+    "gate_result": "passed/pending",
+    "pre_gate_status": "passed",
+    "post_gate_status": "pending"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:57.932076+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "cost_recorded",
+    "status": "success",
+    "summary": "Estimated cost 2.00 recorded (run total 13.50).",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "create_checkpoint",
+    "skill_version": "1.0.0",
+    "task_id": "create_checkpoint:cost_recorded",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:57.968611+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'create_checkpoint' post-execution gates passed.",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "create_checkpoint",
+    "skill_version": "1.0.0",
+    "task_id": "create_checkpoint:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:58.088485+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_executed",
+    "status": "success",
+    "summary": "Skill 'governed_workflow_summary' executed successfully.",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "governed_workflow_summary",
+    "skill_version": "1.0.0",
+    "task_id": "governed_workflow_summary:skill_executed",
+    "policy_decision": "allow",
+    "gate_result": "passed/pending",
+    "pre_gate_status": "passed",
+    "post_gate_status": "pending"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:58.180066+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "cost_recorded",
+    "status": "success",
+    "summary": "Estimated cost 0.50 recorded (run total 14.00).",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "governed_workflow_summary",
+    "skill_version": "1.0.0",
+    "task_id": "governed_workflow_summary:cost_recorded",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:58.223536+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'governed_workflow_summary' post-execution gates passed.",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "governed_workflow_summary",
+    "skill_version": "1.0.0",
+    "task_id": "governed_workflow_summary:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:58.259799+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "agent_step",
+    "status": "success",
+    "summary": "Accountability owner: Demo Operator. Workflow type: Structured data preview. Data source: Synthetic structured database (synthetic demo data only). Intake: Intake accepted for 'Structured data preview' using 'Synthetic structured database' (synthetic demo data only). Analysis: governed skill execution completed on synthetic data. Verification: Analysis output verified without modifying source data. This is a governed demonstration workflow. It uses synthetic data and does not represent real client outcomes.",
+    "accountability_owner": "Demo Operator",
+    "agent_id": "report_agent",
+    "skill_id": "governed_workflow_summary",
+    "skill_version": "1.0.0",
+    "task_id": "governed_workflow_summary:agent_step",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed",
+    "agent_name": "ReportAgent",
+    "execution_status": "success",
+    "output_summary": "Accountability owner: Demo Operator. Workflow type: Structured data preview. Data source: Synthetic structured database (synthetic demo data only). Intake: Intake accepted for 'Structured data preview' using 'Synthetic structured database' (synthetic demo data only). Analysis: governed skill execution completed on synthetic data. Verification: Analysis output verified without modifying source data. This is a governed demonstration workflow. It uses synthetic data and does not represent real client outcomes."
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:58.375367+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_executed",
+    "status": "success",
+    "summary": "Skill 'write_working_memory' executed successfully.",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "write_working_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_working_memory:skill_executed",
+    "policy_decision": "allow",
+    "gate_result": "passed/pending",
+    "pre_gate_status": "passed",
+    "post_gate_status": "pending"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:58.445217+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "cost_recorded",
+    "status": "success",
+    "summary": "Estimated cost 2.00 recorded (run total 16.00).",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "write_working_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_working_memory:cost_recorded",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:58.478751+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'write_working_memory' post-execution gates passed.",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "write_working_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_working_memory:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:58.608663+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_executed",
+    "status": "success",
+    "summary": "Skill 'create_checkpoint' executed successfully.",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "create_checkpoint",
+    "skill_version": "1.0.0",
+    "task_id": "create_checkpoint:skill_executed",
+    "policy_decision": "allow",
+    "gate_result": "passed/pending",
+    "pre_gate_status": "passed",
+    "post_gate_status": "pending"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:58.680067+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "cost_recorded",
+    "status": "success",
+    "summary": "Estimated cost 2.00 recorded (run total 18.00).",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "create_checkpoint",
+    "skill_version": "1.0.0",
+    "task_id": "create_checkpoint:cost_recorded",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:58.713998+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'create_checkpoint' post-execution gates passed.",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "create_checkpoint",
+    "skill_version": "1.0.0",
+    "task_id": "create_checkpoint:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:58.826699+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_executed",
+    "status": "success",
+    "summary": "Skill 'write_session_memory' executed successfully.",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "write_session_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_session_memory:skill_executed",
+    "policy_decision": "allow",
+    "gate_result": "passed/pending",
+    "pre_gate_status": "passed",
+    "post_gate_status": "pending"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:58.894706+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "cost_recorded",
+    "status": "success",
+    "summary": "Estimated cost 2.00 recorded (run total 20.00).",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "write_session_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_session_memory:cost_recorded",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:58.928804+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'write_session_memory' post-execution gates passed.",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "write_session_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_session_memory:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:59.154490+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_executed",
+    "status": "success",
+    "summary": "Skill 'evaluate_trust' executed successfully.",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "evaluate_trust",
+    "skill_version": "1.0.0",
+    "task_id": "evaluate_trust:skill_executed",
+    "policy_decision": "allow",
+    "gate_result": "passed/pending",
+    "pre_gate_status": "passed",
+    "post_gate_status": "pending"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:59.244082+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "cost_recorded",
+    "status": "success",
+    "summary": "Estimated cost 1.00 recorded (run total 21.00).",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "evaluate_trust",
+    "skill_version": "1.0.0",
+    "task_id": "evaluate_trust:cost_recorded",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "timestamp": "2026-07-04T01:50:59.277516+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'evaluate_trust' post-execution gates passed.",
+    "accountability_owner": "Demo Operator",
+    "skill_id": "evaluate_trust",
+    "skill_version": "1.0.0",
+    "task_id": "evaluate_trust:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  }
+]
+```
+
+## failures
+```json
+[]
+```
+
+## approvals
+```json
+[]
+```
+
+## checkpoints
+```json
+[
+  {
+    "checkpoint_id": "de0377bd-7c1a-4657-a0e3-777d35920d94",
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "accountability_owner": "Demo Operator",
+    "current_step": "intake_complete",
+    "completed_steps": [
+      "intake_complete"
+    ],
+    "failed_steps": [],
+    "agent_context": {
+      "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+      "workflow_type": "Structured data preview",
+      "data_source": "Synthetic structured database",
+      "report_path": null,
+      "analytics_verified": null
+    },
+    "output_refs": {
+      "report_path": null,
+      "last_skill_id": "intake_summary",
+      "agent_id": "intake_agent"
+    },
+    "created_at": "2026-07-04T01:50:56.428270+00:00",
+    "status": "created",
+    "skill_id": "create_checkpoint"
+  },
+  {
+    "checkpoint_id": "52a0c276-843d-4de6-a343-7c1528e584af",
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "accountability_owner": "Demo Operator",
+    "current_step": "analysis_complete",
+    "completed_steps": [
+      "intake_complete",
+      "analysis_complete"
+    ],
+    "failed_steps": [],
+    "agent_context": {
+      "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+      "workflow_type": "Structured data preview",
+      "data_source": "Synthetic structured database",
+      "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\87bb2d67-9a00-4208-a643-e584f8c92ac6.json",
+      "analytics_verified": null
+    },
+    "output_refs": {
+      "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\87bb2d67-9a00-4208-a643-e584f8c92ac6.json",
+      "last_skill_id": "structured_data_summary",
+      "agent_id": "analysis_agent"
+    },
+    "created_at": "2026-07-04T01:50:57.158882+00:00",
+    "status": "created",
+    "skill_id": "create_checkpoint"
+  },
+  {
+    "checkpoint_id": "81d740d8-aa53-45e1-ba1b-b2039277f341",
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "accountability_owner": "Demo Operator",
+    "current_step": "verification_passed",
+    "completed_steps": [
+      "intake_complete",
+      "analysis_complete",
+      "verification_passed"
+    ],
+    "failed_steps": [],
+    "agent_context": {
+      "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+      "workflow_type": "Structured data preview",
+      "data_source": "Synthetic structured database",
+      "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\87bb2d67-9a00-4208-a643-e584f8c92ac6.json",
+      "analytics_verified": null
+    },
+    "output_refs": {
+      "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\87bb2d67-9a00-4208-a643-e584f8c92ac6.json",
+      "last_skill_id": "output_verification",
+      "agent_id": "verification_agent"
+    },
+    "created_at": "2026-07-04T01:50:57.859241+00:00",
+    "status": "created",
+    "skill_id": "create_checkpoint"
+  },
+  {
+    "checkpoint_id": "3efa9514-8805-43e6-8cf8-226f685ba049",
+    "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "accountability_owner": "Demo Operator",
+    "current_step": "report_generated",
+    "completed_steps": [
+      "intake_complete",
+      "analysis_complete",
+      "verification_passed",
+      "report_generated"
+    ],
+    "failed_steps": [],
+    "agent_context": {
+      "run_id": "87bb2d67-9a00-4208-a643-e584f8c92ac6",
+      "workflow_type": "Structured data preview",
+      "data_source": "Synthetic structured database",
+      "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\87bb2d67-9a00-4208-a643-e584f8c92ac6.json",
+      "analytics_verified": null
+    },
+    "output_refs": {
+      "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\87bb2d67-9a00-4208-a643-e584f8c92ac6.json",
+      "last_skill_id": "governed_workflow_summary",
+      "agent_id": "report_agent"
+    },
+    "created_at": "2026-07-04T01:50:58.607657+00:00",
+    "status": "created",
+    "skill_id": "create_checkpoint"
+  }
+]
+```
+
+## quarantine_events
+```json
+[]
+```
+
+## dead_letter_events
+```json
+[]
+```

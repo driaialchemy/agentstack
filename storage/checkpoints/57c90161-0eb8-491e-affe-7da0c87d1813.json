@@ -1,0 +1,26 @@
+{
+  "checkpoint_id": "57c90161-0eb8-491e-affe-7da0c87d1813",
+  "run_id": "881741ee-5b6b-4d55-840b-c138ee9d24ac",
+  "workflow_type": "Document review preview",
+  "data_source": "Synthetic document database",
+  "accountability_owner": "dr mike",
+  "current_step": "intake_complete",
+  "completed_steps": [
+    "intake_complete"
+  ],
+  "failed_steps": [],
+  "agent_context": {
+    "run_id": "881741ee-5b6b-4d55-840b-c138ee9d24ac",
+    "workflow_type": "Document review preview",
+    "data_source": "Synthetic document database",
+    "report_path": null,
+    "analytics_verified": null
+  },
+  "output_refs": {
+    "report_path": null,
+    "last_skill_id": "intake_summary",
+    "agent_id": "intake_agent"
+  },
+  "created_at": "2026-07-04T02:01:42.034706+00:00",
+  "status": "created"
+}

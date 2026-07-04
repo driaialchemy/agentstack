@@ -1,0 +1,29 @@
+{
+  "checkpoint_id": "112a9d3d-f82a-488c-9181-3a16af54eae5",
+  "run_id": "4c30f45c-c8c1-4ca7-bf32-22abd2538a28",
+  "workflow_type": "Structured data analytics",
+  "data_source": "Synthetic structured database",
+  "accountability_owner": "dr mike",
+  "current_step": "forecast_complete",
+  "completed_steps": [
+    "intake_complete",
+    "analysis_complete",
+    "analysis_complete",
+    "forecast_complete"
+  ],
+  "failed_steps": [],
+  "agent_context": {
+    "run_id": "4c30f45c-c8c1-4ca7-bf32-22abd2538a28",
+    "workflow_type": "Structured data analytics",
+    "data_source": "Synthetic structured database",
+    "report_path": null,
+    "analytics_verified": null
+  },
+  "output_refs": {
+    "report_path": null,
+    "last_skill_id": "run_fourier_forecast",
+    "agent_id": "analysis_agent"
+  },
+  "created_at": "2026-07-04T01:56:56.646072+00:00",
+  "status": "created"
+}

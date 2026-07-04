@@ -1,0 +1,495 @@
+# Audit Evidence
+
+- **run_id**: 3a818847-8bba-43a3-993e-04eb85016f4b
+
+- **event_count**: 46
+
+## key_audit_entries
+```json
+[
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:52.297310+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'write_working_memory' post-execution gates passed.",
+    "accountability_owner": "dr mike",
+    "skill_id": "write_working_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_working_memory:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:52.633563+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_executed",
+    "status": "success",
+    "summary": "Skill 'create_checkpoint' executed successfully.",
+    "accountability_owner": "dr mike",
+    "skill_id": "create_checkpoint",
+    "skill_version": "1.0.0",
+    "task_id": "create_checkpoint:skill_executed",
+    "policy_decision": "allow",
+    "gate_result": "passed/pending",
+    "pre_gate_status": "passed",
+    "post_gate_status": "pending"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:52.844950+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "cost_recorded",
+    "status": "success",
+    "summary": "Estimated cost 2.00 recorded (run total 13.50).",
+    "accountability_owner": "dr mike",
+    "skill_id": "create_checkpoint",
+    "skill_version": "1.0.0",
+    "task_id": "create_checkpoint:cost_recorded",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:52.977988+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'create_checkpoint' post-execution gates passed.",
+    "accountability_owner": "dr mike",
+    "skill_id": "create_checkpoint",
+    "skill_version": "1.0.0",
+    "task_id": "create_checkpoint:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:53.334086+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_executed",
+    "status": "success",
+    "summary": "Skill 'governed_workflow_summary' executed successfully.",
+    "accountability_owner": "dr mike",
+    "skill_id": "governed_workflow_summary",
+    "skill_version": "1.0.0",
+    "task_id": "governed_workflow_summary:skill_executed",
+    "policy_decision": "allow",
+    "gate_result": "passed/pending",
+    "pre_gate_status": "passed",
+    "post_gate_status": "pending"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:53.516980+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "cost_recorded",
+    "status": "success",
+    "summary": "Estimated cost 0.50 recorded (run total 14.00).",
+    "accountability_owner": "dr mike",
+    "skill_id": "governed_workflow_summary",
+    "skill_version": "1.0.0",
+    "task_id": "governed_workflow_summary:cost_recorded",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:53.648255+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'governed_workflow_summary' post-execution gates passed.",
+    "accountability_owner": "dr mike",
+    "skill_id": "governed_workflow_summary",
+    "skill_version": "1.0.0",
+    "task_id": "governed_workflow_summary:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:53.760695+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "agent_step",
+    "status": "success",
+    "summary": "Accountability owner: dr mike. Workflow type: Structured data preview. Data source: Synthetic structured database (synthetic demo data only). Intake: Intake accepted for 'Structured data preview' using 'Synthetic structured database' (synthetic demo data only). Analysis: governed skill execution completed on synthetic data. Verification: Analysis output verified without modifying source data. This is a governed demonstration workflow. It uses synthetic data and does not represent real client outcomes.",
+    "accountability_owner": "dr mike",
+    "agent_id": "report_agent",
+    "skill_id": "governed_workflow_summary",
+    "skill_version": "1.0.0",
+    "task_id": "governed_workflow_summary:agent_step",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed",
+    "agent_name": "ReportAgent",
+    "execution_status": "success",
+    "output_summary": "Accountability owner: dr mike. Workflow type: Structured data preview. Data source: Synthetic structured database (synthetic demo data only). Intake: Intake accepted for 'Structured data preview' using 'Synthetic structured database' (synthetic demo data only). Analysis: governed skill execution completed on synthetic data. Verification: Analysis output verified without modifying source data. This is a governed demonstration workflow. It uses synthetic data and does not represent real client outcomes."
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:54.031729+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_executed",
+    "status": "success",
+    "summary": "Skill 'write_working_memory' executed successfully.",
+    "accountability_owner": "dr mike",
+    "skill_id": "write_working_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_working_memory:skill_executed",
+    "policy_decision": "allow",
+    "gate_result": "passed/pending",
+    "pre_gate_status": "passed",
+    "post_gate_status": "pending"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:54.219847+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "cost_recorded",
+    "status": "success",
+    "summary": "Estimated cost 2.00 recorded (run total 16.00).",
+    "accountability_owner": "dr mike",
+    "skill_id": "write_working_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_working_memory:cost_recorded",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:54.275719+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'write_working_memory' post-execution gates passed.",
+    "accountability_owner": "dr mike",
+    "skill_id": "write_working_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_working_memory:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:54.561914+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_executed",
+    "status": "success",
+    "summary": "Skill 'create_checkpoint' executed successfully.",
+    "accountability_owner": "dr mike",
+    "skill_id": "create_checkpoint",
+    "skill_version": "1.0.0",
+    "task_id": "create_checkpoint:skill_executed",
+    "policy_decision": "allow",
+    "gate_result": "passed/pending",
+    "pre_gate_status": "passed",
+    "post_gate_status": "pending"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:54.742499+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "cost_recorded",
+    "status": "success",
+    "summary": "Estimated cost 2.00 recorded (run total 18.00).",
+    "accountability_owner": "dr mike",
+    "skill_id": "create_checkpoint",
+    "skill_version": "1.0.0",
+    "task_id": "create_checkpoint:cost_recorded",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:54.867917+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'create_checkpoint' post-execution gates passed.",
+    "accountability_owner": "dr mike",
+    "skill_id": "create_checkpoint",
+    "skill_version": "1.0.0",
+    "task_id": "create_checkpoint:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:55.215359+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_executed",
+    "status": "success",
+    "summary": "Skill 'write_session_memory' executed successfully.",
+    "accountability_owner": "dr mike",
+    "skill_id": "write_session_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_session_memory:skill_executed",
+    "policy_decision": "allow",
+    "gate_result": "passed/pending",
+    "pre_gate_status": "passed",
+    "post_gate_status": "pending"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:55.381766+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "cost_recorded",
+    "status": "success",
+    "summary": "Estimated cost 2.00 recorded (run total 20.00).",
+    "accountability_owner": "dr mike",
+    "skill_id": "write_session_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_session_memory:cost_recorded",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:55.470215+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'write_session_memory' post-execution gates passed.",
+    "accountability_owner": "dr mike",
+    "skill_id": "write_session_memory",
+    "skill_version": "1.0.0",
+    "task_id": "write_session_memory:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:55.944106+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_executed",
+    "status": "success",
+    "summary": "Skill 'evaluate_trust' executed successfully.",
+    "accountability_owner": "dr mike",
+    "skill_id": "evaluate_trust",
+    "skill_version": "1.0.0",
+    "task_id": "evaluate_trust:skill_executed",
+    "policy_decision": "allow",
+    "gate_result": "passed/pending",
+    "pre_gate_status": "passed",
+    "post_gate_status": "pending"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:56.094516+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "cost_recorded",
+    "status": "success",
+    "summary": "Estimated cost 1.00 recorded (run total 21.00).",
+    "accountability_owner": "dr mike",
+    "skill_id": "evaluate_trust",
+    "skill_version": "1.0.0",
+    "task_id": "evaluate_trust:cost_recorded",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  },
+  {
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "timestamp": "2026-07-04T01:55:56.193780+00:00",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "action": "skill_completed",
+    "status": "success",
+    "summary": "Skill 'evaluate_trust' post-execution gates passed.",
+    "accountability_owner": "dr mike",
+    "skill_id": "evaluate_trust",
+    "skill_version": "1.0.0",
+    "task_id": "evaluate_trust:skill_completed",
+    "policy_decision": "allow",
+    "gate_result": "passed/passed",
+    "pre_gate_status": "passed",
+    "post_gate_status": "passed"
+  }
+]
+```
+
+## failures
+```json
+[]
+```
+
+## approvals
+```json
+[]
+```
+
+## checkpoints
+```json
+[
+  {
+    "checkpoint_id": "164583d4-ae5b-4ca1-babe-80c84c948860",
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "accountability_owner": "dr mike",
+    "current_step": "intake_complete",
+    "completed_steps": [
+      "intake_complete"
+    ],
+    "failed_steps": [],
+    "agent_context": {
+      "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+      "workflow_type": "Structured data preview",
+      "data_source": "Synthetic structured database",
+      "report_path": null,
+      "analytics_verified": null
+    },
+    "output_refs": {
+      "report_path": null,
+      "last_skill_id": "intake_summary",
+      "agent_id": "intake_agent"
+    },
+    "created_at": "2026-07-04T01:55:49.002937+00:00",
+    "status": "created",
+    "skill_id": "create_checkpoint"
+  },
+  {
+    "checkpoint_id": "d1e7e8bc-beaf-4b98-bbab-a6cc3140255d",
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "accountability_owner": "dr mike",
+    "current_step": "analysis_complete",
+    "completed_steps": [
+      "intake_complete",
+      "analysis_complete"
+    ],
+    "failed_steps": [],
+    "agent_context": {
+      "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+      "workflow_type": "Structured data preview",
+      "data_source": "Synthetic structured database",
+      "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\3a818847-8bba-43a3-993e-04eb85016f4b.json",
+      "analytics_verified": null
+    },
+    "output_refs": {
+      "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\3a818847-8bba-43a3-993e-04eb85016f4b.json",
+      "last_skill_id": "structured_data_summary",
+      "agent_id": "analysis_agent"
+    },
+    "created_at": "2026-07-04T01:55:50.745797+00:00",
+    "status": "created",
+    "skill_id": "create_checkpoint"
+  },
+  {
+    "checkpoint_id": "a053e2e7-1be1-4139-8f41-91ec8d262229",
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "accountability_owner": "dr mike",
+    "current_step": "verification_passed",
+    "completed_steps": [
+      "intake_complete",
+      "analysis_complete",
+      "verification_passed"
+    ],
+    "failed_steps": [],
+    "agent_context": {
+      "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+      "workflow_type": "Structured data preview",
+      "data_source": "Synthetic structured database",
+      "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\3a818847-8bba-43a3-993e-04eb85016f4b.json",
+      "analytics_verified": null
+    },
+    "output_refs": {
+      "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\3a818847-8bba-43a3-993e-04eb85016f4b.json",
+      "last_skill_id": "output_verification",
+      "agent_id": "verification_agent"
+    },
+    "created_at": "2026-07-04T01:55:52.631052+00:00",
+    "status": "created",
+    "skill_id": "create_checkpoint"
+  },
+  {
+    "checkpoint_id": "74a7d0a0-c8e2-4942-8725-4756cbb03927",
+    "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+    "workflow_type": "Structured data preview",
+    "data_source": "Synthetic structured database",
+    "accountability_owner": "dr mike",
+    "current_step": "report_generated",
+    "completed_steps": [
+      "intake_complete",
+      "analysis_complete",
+      "verification_passed",
+      "report_generated"
+    ],
+    "failed_steps": [],
+    "agent_context": {
+      "run_id": "3a818847-8bba-43a3-993e-04eb85016f4b",
+      "workflow_type": "Structured data preview",
+      "data_source": "Synthetic structured database",
+      "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\3a818847-8bba-43a3-993e-04eb85016f4b.json",
+      "analytics_verified": null
+    },
+    "output_refs": {
+      "report_path": "C:\\Users\\msell\\OneDrive\\aialchemyrepos\\agentstack\\reports\\3a818847-8bba-43a3-993e-04eb85016f4b.json",
+      "last_skill_id": "governed_workflow_summary",
+      "agent_id": "report_agent"
+    },
+    "created_at": "2026-07-04T01:55:54.558915+00:00",
+    "status": "created",
+    "skill_id": "create_checkpoint"
+  }
+]
+```
+
+## quarantine_events
+```json
+[]
+```
+
+## dead_letter_events
+```json
+[]
+```

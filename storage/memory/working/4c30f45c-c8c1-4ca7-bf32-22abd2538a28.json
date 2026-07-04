@@ -1,0 +1,18 @@
+{
+  "run_id": "4c30f45c-c8c1-4ca7-bf32-22abd2538a28",
+  "payload": {
+    "run_id": "4c30f45c-c8c1-4ca7-bf32-22abd2538a28",
+    "accountability_owner": "dr mike",
+    "workflow_type": "Structured data analytics",
+    "data_source": "Synthetic structured database",
+    "structured": true,
+    "status": "success",
+    "step": "verification_passed",
+    "agent_id": "verification_agent",
+    "skill_id": "verify_analytics_report",
+    "output_summary": "Analytics report verified successfully.",
+    "verified": true,
+    "verification_required": true
+  },
+  "updated_at": "2026-07-04T01:57:02.877903+00:00"
+}

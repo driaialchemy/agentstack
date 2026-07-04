@@ -1,0 +1,26 @@
+{
+  "checkpoint_id": "ae3f09fb-6980-4604-b774-8160322a5abf",
+  "run_id": "4f7766d5-abde-4305-b911-e67f6737064a",
+  "workflow_type": "Document review preview",
+  "data_source": "Synthetic document database",
+  "accountability_owner": "Tester",
+  "current_step": "intake_complete",
+  "completed_steps": [
+    "intake_complete"
+  ],
+  "failed_steps": [],
+  "agent_context": {
+    "run_id": "4f7766d5-abde-4305-b911-e67f6737064a",
+    "workflow_type": "Document review preview",
+    "data_source": "Synthetic document database",
+    "report_path": null,
+    "analytics_verified": null
+  },
+  "output_refs": {
+    "report_path": null,
+    "last_skill_id": "intake_summary",
+    "agent_id": "intake_agent"
+  },
+  "created_at": "2026-07-04T01:40:49.567822+00:00",
+  "status": "created"
+}

@@ -14,6 +14,7 @@ from governance.failure_taxonomy import recommended_action
 from governance.workflow_charter import (
     CHARTER_RULE,
     DATA_SOURCES,
+    REQUIRED_CHARTER_FIELDS,
     WORKFLOW_TYPES,
     charter_status_message,
     load_charter_text,
@@ -98,15 +99,70 @@ def _render_blocked_state(result: dict[str, Any]) -> None:
                 st.write(f"- {item}")
 
 
+def _ensure_charter_state() -> None:
+    """Initialize charter widget keys so validation reads stable session state."""
+    for field_name, _ in REQUIRED_CHARTER_FIELDS:
+        if field_name not in st.session_state:
+            st.session_state[field_name] = (
+                "" if field_name == "accountability_owner" else False
+            )
+
+
+def _render_charter_checklist() -> dict[str, Any]:
+    """Render required charter acknowledgments using validator field names."""
+    _ensure_charter_state()
+    col1, col2 = st.columns(2)
+    with col1:
+        form_data = {
+            "business_problem_ack": st.checkbox(
+                "Business problem acknowledged",
+                key="business_problem_ack",
+            ),
+            "desired_outcome_ack": st.checkbox(
+                "Desired outcome acknowledged",
+                key="desired_outcome_ack",
+            ),
+            "accountability_owner": st.text_input(
+                "Accountability owner",
+                placeholder="e.g. Demo Operator",
+                key="accountability_owner",
+            ),
+        }
+    with col2:
+        form_data["workflow_scope_ack"] = st.checkbox(
+            "Workflow scope confirmed (Phase 1–6 demo only)",
+            key="workflow_scope_ack",
+        )
+        form_data["out_of_scope_ack"] = st.checkbox(
+            "Out-of-scope activities excluded (no Phase 7+ features)",
+            key="out_of_scope_ack",
+        )
+        form_data["audit_enabled_ack"] = st.checkbox(
+            "Audit and observability enabled",
+            key="audit_enabled_ack",
+        )
+    return form_data
+
+
 def _charter_form_data() -> dict[str, Any]:
-    return {
-        "business_problem_ack": st.session_state.get("business_problem_ack", False),
-        "desired_outcome_ack": st.session_state.get("desired_outcome_ack", False),
-        "accountability_owner": st.session_state.get("accountability_owner", ""),
-        "workflow_scope_ack": st.session_state.get("workflow_scope_ack", False),
-        "out_of_scope_ack": st.session_state.get("out_of_scope_ack", False),
-        "audit_enabled_ack": st.session_state.get("audit_enabled_ack", False),
-    }
+    _ensure_charter_state()
+    form_data: dict[str, Any] = {}
+    for field_name, _ in REQUIRED_CHARTER_FIELDS:
+        if field_name == "accountability_owner":
+            form_data[field_name] = str(st.session_state.get(field_name, "") or "")
+        else:
+            form_data[field_name] = bool(st.session_state.get(field_name, False))
+    return form_data
+
+
+def _render_charter_status(form_data: dict[str, Any]) -> tuple[bool, list[str]]:
+    is_complete, missing = validate_charter(form_data)
+    message = charter_status_message(is_complete, missing)
+    if is_complete:
+        st.success(message)
+    else:
+        st.warning(message)
+    return is_complete, missing
 
 
 def _run_governed_skill(
@@ -230,6 +286,11 @@ def _render_output(result: dict[str, Any]) -> None:
         st.json(output if output else result)
 
 
+st.subheader("Run charter checklist")
+st.caption(f"**{CHARTER_RULE}** Complete every item before running workflows.")
+charter_form = _render_charter_checklist()
+charter_is_complete, charter_missing = _render_charter_status(charter_form)
+
 tab_charter, tab_run, tab_output, tab_analytics, tab_memory, tab_advanced, tab_governance, tab_agents, tab_audit = st.tabs(
     [
         "Workflow Charter",
@@ -241,13 +302,14 @@ tab_charter, tab_run, tab_output, tab_analytics, tab_memory, tab_advanced, tab_g
         "Skills Governance",
         "Agents & Orchestration",
         "Audit Log",
-    ]
+    ],
+    key="main_demo_tabs",
 )
 
 with tab_charter:
     st.subheader("Agent Charter")
     st.markdown(
-        "Complete the checklist below before running a workflow. "
+        "Complete the checklist above before running a workflow. "
         f"**{CHARTER_RULE}**"
     )
 
@@ -258,43 +320,8 @@ with tab_charter:
             st.error(str(exc))
 
     st.divider()
-    st.subheader("Run charter checklist")
-
-    charter_form = {
-        "business_problem_ack": st.checkbox(
-            "Business problem acknowledged",
-            key="business_problem_ack",
-        ),
-        "desired_outcome_ack": st.checkbox(
-            "Desired outcome acknowledged",
-            key="desired_outcome_ack",
-        ),
-        "accountability_owner": st.text_input(
-            "Accountability owner",
-            placeholder="e.g. Demo Operator",
-            key="accountability_owner",
-        ),
-        "workflow_scope_ack": st.checkbox(
-            "Workflow scope confirmed (Phase 1 demo only)",
-            key="workflow_scope_ack",
-        ),
-        "out_of_scope_ack": st.checkbox(
-            "Out-of-scope activities excluded (no Phase 2+ features)",
-            key="out_of_scope_ack",
-        ),
-        "audit_enabled_ack": st.checkbox(
-            "Audit and observability enabled",
-            key="audit_enabled_ack",
-        ),
-    }
-
-    is_complete, missing = validate_charter(charter_form)
-    message = charter_status_message(is_complete, missing)
-
-    if is_complete:
-        st.success(message)
-    else:
-        st.warning(message)
+    st.subheader("Charter checklist status")
+    _render_charter_status(_charter_form_data())
 
 with tab_run:
     st.subheader("Run demonstration workflow")
@@ -336,6 +363,9 @@ with tab_run:
         "- **Structured data analytics** → Synthetic structured database"
     )
 
+    if not charter_is_complete:
+        st.warning(charter_status_message(charter_is_complete, charter_missing))
+
     if st.button("Run workflow", type="primary"):
         form_data = _charter_form_data()
         is_complete, missing = validate_charter(form_data)
@@ -344,13 +374,16 @@ with tab_run:
             st.error(charter_status_message(is_complete, missing))
             st.stop()
 
-        owner = st.session_state.get("accountability_owner", "").strip()
+        owner = str(form_data["accountability_owner"]).strip()
+        if not owner:
+            st.error(charter_status_message(False, ["Accountability owner named"]))
+            st.stop()
 
         with st.spinner("Running governed agent workflow..."):
             result = _run_orchestrated_workflow(
                 workflow_type=workflow_type,
                 data_source=data_source,
-                charter_complete=True,
+                charter_complete=is_complete,
                 accountability_owner=owner,
             )
 
